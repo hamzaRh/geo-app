@@ -1,0 +1,14 @@
+<div class="weather-info">
+    <div class="overlay"></div>
+    <div class=popup>
+        <span class="close" (click)="close()">&#10006;</span>
+        <div class="content">
+            <span>Description: <b>{{globalWeather.weather[0].main}}</b></span>
+            <span>Tempreture: <b>{{globalWeather.main.temp | number : '1.0-0'}}</b></span>
+            <span>humidity: <b>{{globalWeather.main.humidity}}</b></span>
+            <span>Pressure: <b>{{globalWeather.main.pressure}}</b></span>
+            <span>Wind Speed: <b>{{globalWeather.wind.speed}}</b></span>
+            <span>Wind Degree: <b>{{globalWeather.wind.deg}}</b></span>
+        </div>
+    </div>
+</div>

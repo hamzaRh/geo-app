@@ -1,0 +1,6 @@
+<div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <input ytpe="text" name="cityName" id="cityName" formControlName="cityName">
+        <button type="submit" [disabled]="!form.valid">Search</button>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+<div class="map-container">
+  <ng-container *ngIf="results?.totalResultsCount && results?.totalResultsCount > 0; else noReuslts">
+    <google-map width="100%" [center]="center">
+      <map-marker #markerElem *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label"
+        [title]="marker.title" [options]="marker.options" [zoom]="zoom" (mapClick)="getWeatherInfo(marker.position)">
+      </map-marker>
+    </google-map>
+  </ng-container>
+
+  <div class="weather-info" *ngIf="openPopup">
+    <app-weather-popup [globalWeather]="globalWeather" (closePopup)="closePopup()"></app-weather-popup>
+  </div>
+
+
+  <ng-template #noReuslts>
+    <ng-container *ngIf="results?.totalResultsCount === 0; else start">
+      <div class="message">Sorry, there is no results for your search, please try again!</div>
+    </ng-container>
+  </ng-template>
+
+  <ng-template #start>
+    <div class="message">Please enter a city name</div>
+  </ng-template>
+</div>
