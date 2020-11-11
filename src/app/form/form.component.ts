@@ -20,7 +20,7 @@ export class FormComponent implements OnChanges{
   }
 
   ngOnChanges(changes: SimpleChanges) { 
-    if (this,this.isDisabled) {
+    if (this.isDisabled) {
       this.form.controls['cityName'].disable();
     } else {
       this.form.controls['cityName'].enable();
